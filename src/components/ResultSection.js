@@ -1,4 +1,5 @@
 import React from "react";
+import {hexaGenerator} from "../utils/hexaGenerator";
 
 const ResultSection = (props) => {
 
@@ -13,7 +14,7 @@ const ResultSection = (props) => {
             {countries
               .filter(country => country.toLowerCase().includes(searchInputToLowerCase))
               .map((country,index) => (
-                <div key={index}>{country}</div>
+                <div style={{backgroundColor: hexaGenerator()}} key={index}>{country}</div>
               ))}
           </div>
         ) : (

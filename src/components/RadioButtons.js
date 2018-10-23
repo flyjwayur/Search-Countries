@@ -1,11 +1,12 @@
 import React from 'react';
+import './radioButtons.css';
 
 function RadioButtons(props){
 
   let {id, value , onClickHandler, labelText} = props
 
   return (
-    <div className="startWordContainer">
+    <div className>
     <input
       type="radio"
       id={id}

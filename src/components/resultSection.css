@@ -1,0 +1,18 @@
+.resultSection {
+  width: 100%;
+  margin: 5rem auto;
+  background-color: var(--white);
+}
+
+.eachCountry {
+  width: 90%;
+  height: 110px;
+  margin: 1rem auto;
+  text-align: center;
+  padding-top: 45px;
+  color: var(--light-grey);
+  font-weight: 700;
+  font-size : 1.2rem;
+  line-height: 1.2rem;
+  text-shadow: 1px 2px 2px var(--dark-brown);
+}

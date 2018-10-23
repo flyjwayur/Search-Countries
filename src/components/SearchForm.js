@@ -1,10 +1,11 @@
 import React from "react";
-import RadioButtons from "./RadioButtons"
+import RadioButtons from "./RadioButtons";
+import './searchForm.css';
 
 const SearchForm = ({handleRadioButton, handleOnChange}) => {
 
     return (
-      <div>
+      <section className="searchSection">
         <form name="searchForm" className="searchForm">
           <div className="radioBtnWrapper">
           <RadioButtons id="startWord" value="startWord" onClickHandler={() => handleRadioButton(false)} labelText="Starting Word"/>
@@ -17,7 +18,7 @@ const SearchForm = ({handleRadioButton, handleOnChange}) => {
           placeholder="Search Countries :D"
           onKeyUp={handleOnChange}
         />
-      </div>
+      </section>
     );
 }
 

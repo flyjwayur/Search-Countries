@@ -1,0 +1,29 @@
+.searchSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-yellow);
+  padding-bottom : 3rem;
+}
+
+.radioBtnWrapper {
+  display: flex;
+  margin: 1rem;
+}
+
+.searchInput {
+  width: 70%;
+  height: 2rem;
+  color: var(--emerald-Green);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.3rem 0;
+  border: 2.5px solid var(--light-brown);
+  margin-top : 1rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  text-align: center;
+  font-size: 1.5rem;
+}

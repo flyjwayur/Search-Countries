@@ -1,0 +1,34 @@
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-yellow);
+  padding-top: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.totalNumText{
+  margin: 2rem;
+}
+
+.totalNumText {
+  color: var(--emerald-Green);
+  padding-left: 0.5rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.resultText{
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.hightlightResult {
+  color: #f05837;
+  font-weight: 800;
+  margin: auto 0.5rem;
+}

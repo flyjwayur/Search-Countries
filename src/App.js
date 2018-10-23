@@ -31,12 +31,10 @@ class App extends Component {
           include={this.state.include}
           searchInput={this.state.searchInput}
         />
-        <section className="searchSection">
           <SearchForm
             handleRadioButton={this.handleRadioButton}
             handleOnChange={this.handleOnChange}
           />
-        </section>
         <ResultSection
           countries={countries}
           include={this.state.include}

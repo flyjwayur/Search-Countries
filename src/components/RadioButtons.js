@@ -11,7 +11,7 @@ function RadioButtons(props){
       id={id}
       name="radioBtn"
       value={value}
-      onClick={onClickHandler}
+      onChange={onClickHandler}
     />
     <label htmlFor={id} className="radioBtnLabel">
       {labelText}

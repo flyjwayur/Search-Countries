@@ -3,15 +3,9 @@ import SearchForm from "./SearchForm";
 import ResultSection from "./ResultSection";
 
 class SearchSection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchInput: "",
-      include: true
-    };
-    
-    this.handleRadioButton = this.handleRadioButton.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
+  state = {
+    searchInput: "",
+    include: true
   }
 
   handleRadioButton = include => {
@@ -20,9 +14,9 @@ class SearchSection extends React.Component {
     });
   };
 
-  handleOnChange = searchInput => {
+  handleOnChange = e => {
     this.setState({
-      searchInput
+      searchInput : e.target.value
     });
   };
 
@@ -32,7 +26,6 @@ class SearchSection extends React.Component {
         <section className="searchSection">
           <SearchForm
             searchInput={this.state.searchInput}
-            searchType={this.state.include}
             handleRadioButton={this.handleRadioButton}
             handleOnChange={this.handleOnChange}
           />
@@ -41,8 +34,6 @@ class SearchSection extends React.Component {
           countries = {this.props.countries}
           searchInput={this.state.searchInput}
           searchType={this.state.include}
-          handleRadioButton={this.handleRadioButton}
-          handleOnChange={this.handleOnChange}
         />
       </div>
     );

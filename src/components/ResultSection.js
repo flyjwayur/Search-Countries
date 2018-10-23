@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResultSection(props) {
+const ResultSection = (props) => {
 
   let { countries, searchInput, searchType} = props;
   let searchInputToLowerCase = searchInput.toLowerCase();
@@ -11,7 +11,7 @@ function ResultSection(props) {
         {searchType ? (
           <div>
             {countries
-              .filter(country => country.toLowerCase().startsWith(searchInputToLowerCase))
+              .filter(country => country.toLowerCase().includes(searchInputToLowerCase))
               .map((country,index) => (
                 <div key={index}>{country}</div>
               ))}

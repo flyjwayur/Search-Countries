@@ -1,47 +1,60 @@
-import React from 'react';
-import {countries} from '../Data/countries'
+import React from "react";
+import { countries } from "../Data/countries";
+import SearchForm from "./SearchForm";
 
 console.log(countries);
 
-class SearchSection extends React.Component{
-
-  state = {
-    searchInput : "",
-    include : true
+class SearchSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchInput: "",
+      include: true
+    };
+    this.handleRadioButton = this.handleRadioButton.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleRadioButton = include => {
     this.setState({
-      include,
-    })
-  }
+      include
+    });
+  };
 
-  handleOnKeyUp = e => {
-    console.log(e.target.value);
+  handleOnChange = searchInput => {
     this.setState({
-      searchInput : e.target.value
-    })
-
+      searchInput,
+    });
   }
-  render(){
-    return(
+
+  render() {
+    return (
       <section className="searchSection">
-                {this.state.include? <div>{countries.filter(country=>country.startsWith('A')).map(country=><div>{country}</div>)}</div>  : <div>{countries.filter(country=>country.startsWith('B')).map(country=><div>{country}</div>)}</div>}
-      <form name="searchForm" className="searchForm">
-          <div className="radioBtnWrapper">
-              <div className="startWordContainer">
-                  <input type="radio" id="startWord" name="radioBtn" value="startWord" onClick={() => this.handleRadioButton(false)}/>
-                  <label htmlFor="startWord" className="radioBtnLabel">Starting Word</label>
-              </div>
-              <div className="anyWordContainer">
-                  <input type="radio" id="anyWord" name="radioBtn" value="anyWord" onClick={() => this.handleRadioButton(true)}/>
-                  <label htmlFor="anyWord" className="radioBtnLabel">Any Word</label>
-              </div>
+        {this.state.include ? (
+          <div>
+            {countries
+              .filter(country => country.startsWith("A"))
+              .map(country => (
+                <div>{country}</div>
+              ))}
           </div>
-      </form>
-      <input className="searchInput" type="text" placeholder="Search Countries :D" onKeyUp={ this.handleOnKeyUp } />
-  </section>
-    )
+        ) : (
+          <div>
+            {countries
+              .filter(country => country.startsWith("B"))
+              .map(country => (
+                <div>{country}</div>
+              ))}
+          </div>
+        )}
+        <SearchForm
+          searchInput={this.state.searchInput}
+          searchType={this.state.include}
+          handleRadioButton={this.handleRadioButton}
+          handleOnChange={this.handleOnChange}
+        />
+      </section>
+    );
   }
 }
 

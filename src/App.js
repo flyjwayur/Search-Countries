@@ -1,15 +1,47 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './components/Header'
-import SearchSection from './components/SearchSection'
+import React, { Component } from "react";
+import "./App.css";
 import { countries } from "./data/countries";
+import Header from "./components/Header";
+import SearchForm from "./components/SearchForm";
+import ResultSection from "./components/ResultSection";
 
 class App extends Component {
+  state = {
+    searchInput: "",
+    include: true
+  };
+
+  handleRadioButton = include => {
+    this.setState({
+      include
+    });
+  };
+
+  handleOnChange = e => {
+    this.setState({
+      searchInput: e.target.value.toLowerCase()
+    });
+  };
+
   render() {
     return (
       <div className="wrapper">
-      <Header/>
-      <SearchSection countries={countries}/>
+        <Header
+          countries={countries}
+          include={this.state.include}
+          searchInput={this.state.searchInput}
+        />
+        <section className="searchSection">
+          <SearchForm
+            handleRadioButton={this.handleRadioButton}
+            handleOnChange={this.handleOnChange}
+          />
+        </section>
+        <ResultSection
+          countries={countries}
+          include={this.state.include}
+          searchInput={this.state.searchInput}
+        />
       </div>
     );
   }

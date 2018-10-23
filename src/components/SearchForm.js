@@ -1,9 +1,7 @@
 import React from "react";
 import RadioButtons from "./RadioButtons"
 
-const SearchForm = (props) => {
-
-  let {handleRadioButton, handleOnChange} = props;
+const SearchForm = ({handleRadioButton, handleOnChange}) => {
 
     return (
       <div>

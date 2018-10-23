@@ -1,28 +1,22 @@
 import React from "react";
 import {hexaGenerator} from "../utils/hexaGenerator";
+import {startsWith, includes} from '../utils/searchFunctions';
 
-const ResultSection = (props) => {
-
-  let { countries, searchInput, searchType} = props;
-  let searchInputToLowerCase = searchInput.toLowerCase();
-
+const ResultSection = ({ countries, searchInput,include}) => {
+  
   return (
     <section className="resultSection">
       <div className="countryList">
-        {searchType ? (
+        {include ? (
           <div>
-            {countries
-              .filter(country => country.toLowerCase().includes(searchInputToLowerCase))
-              .map((country,index) => (
+            {includes(countries, searchInput).map((country,index) => (
                 <div style={{backgroundColor: hexaGenerator()}} key={index}>{country}</div>
               ))}
           </div>
         ) : (
           <div>
-            {countries
-              .filter(country => country.toLowerCase().startsWith(searchInputToLowerCase))
-              .map((country, index) => (
-                <div key={index}>{country}</div>
+            {startsWith(countries, searchInput).map((country, index) => (
+                <div style={{backgroundColor: hexaGenerator()}} key={index}>{country}</div>
               ))}
           </div>
         )}

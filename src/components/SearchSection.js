@@ -1,8 +1,6 @@
 import React from "react";
-import { countries } from "../Data/countries";
 import SearchForm from "./SearchForm";
-
-console.log(countries);
+import ResultSection from "./ResultSection";
 
 class SearchSection extends React.Component {
   constructor(props) {
@@ -11,6 +9,7 @@ class SearchSection extends React.Component {
       searchInput: "",
       include: true
     };
+    
     this.handleRadioButton = this.handleRadioButton.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
@@ -23,37 +22,29 @@ class SearchSection extends React.Component {
 
   handleOnChange = searchInput => {
     this.setState({
-      searchInput,
+      searchInput
     });
-  }
+  };
 
   render() {
     return (
-      <section className="searchSection">
-        {this.state.include ? (
-          <div>
-            {countries
-              .filter(country => country.startsWith("A"))
-              .map(country => (
-                <div>{country}</div>
-              ))}
-          </div>
-        ) : (
-          <div>
-            {countries
-              .filter(country => country.startsWith("B"))
-              .map(country => (
-                <div>{country}</div>
-              ))}
-          </div>
-        )}
-        <SearchForm
+      <div>
+        <section className="searchSection">
+          <SearchForm
+            searchInput={this.state.searchInput}
+            searchType={this.state.include}
+            handleRadioButton={this.handleRadioButton}
+            handleOnChange={this.handleOnChange}
+          />
+        </section>
+        <ResultSection
+          countries = {this.props.countries}
           searchInput={this.state.searchInput}
           searchType={this.state.include}
           handleRadioButton={this.handleRadioButton}
           handleOnChange={this.handleOnChange}
         />
-      </section>
+      </div>
     );
   }
 }

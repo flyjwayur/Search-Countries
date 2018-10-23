@@ -1,4 +1,5 @@
 import React from "react";
+import RadioButtons from "./RadioButtons"
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -20,32 +21,8 @@ class SearchForm extends React.Component {
       <div>
         <form name="searchForm" className="searchForm">
           <div className="radioBtnWrapper">
-            <div className="startWordContainer">
-              <input
-                type="radio"
-                id="startWord"
-                name="radioBtn"
-                value="startWord"
-                onClick={() => this.handleRadioButton(false)}
-              />
-              <label htmlFor="startWord" className="radioBtnLabel">
-                {" "}
-                Starting Word{" "}
-              </label>
-            </div>
-            <div className="anyWordContainer">
-              <input
-                type="radio"
-                id="anyWord"
-                name="radioBtn"
-                value="anyWord"
-                onClick={() => this.handleRadioButton(true)}
-              />
-              <label htmlFor="anyWord" className="radioBtnLabel">
-                {" "}
-                Any Word{" "}
-              </label>
-            </div>
+          <RadioButtons id="startWord" value="startWord" onClickHandler={() => this.handleRadioButton(false)}  labelText="Starting Word"/>
+          <RadioButtons id="anyWord" value="anyWord" onClickHandler={() => this.handleRadioButton(true)} labelText="Any Word" />
           </div>
         </form>
         <input

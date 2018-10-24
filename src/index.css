@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,11 +7,15 @@
 }
 
 :root{
+    /*font*/
+    --Ubuntu: 'Ubuntu', sans-serif;;
+
     /*color*/
     --emerald-Green :#0abda0;
-    --light-brown : rgba(191, 157, 122, 0.5);
-    --light-yellow : #ffffe6;
+    --light-brown : #8a4f1080;
+    --middle-brown : rgb(165, 119, 74);
+    --light-yellow : rgba(255, 255, 230, 0.7);
     --dark-brown : rgb(43, 29, 14, 1);
     --light-grey : #efefef;
-    --white : #fff;
+    --light-blue : rgba(173,216,230, 0.5);
 }

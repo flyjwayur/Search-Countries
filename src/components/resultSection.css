@@ -1,7 +1,7 @@
 .resultSection {
   width: 100%;
-  margin: 5rem auto;
-  background-color: var(--white);
+  padding-top: 5rem;
+  background-color: var(--light-blue);
 }
 
 .eachCountry {

@@ -21,7 +21,7 @@ input:focus {
 }
 
 .radioBtnLabel:hover{
-    background-color: rgba(191, 157, 122, 1);
+    background-color: var(--middle-brown);
 }
 
 input[type="radio"]:checked + .radioBtnLabel{

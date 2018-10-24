@@ -1,4 +1,6 @@
 .wrapper {
   width: 100%;
   font-family: "Montserrat", sans-serif;
+  background-image: url('./assets/world.jpg');  
+  font-family : var(--ubuntu);                 
 }

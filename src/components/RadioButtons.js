@@ -6,7 +6,7 @@ function RadioButtons(props){
   let {id, value , onClickHandler, labelText} = props
 
   return (
-    <div className>
+    <div>
     <input
       type="radio"
       id={id}

@@ -4,6 +4,10 @@
   background-color: var(--light-blue);
 }
 
+.countryList{
+  padding-bottom : 3rem;
+}
+
 .eachCountry {
   width: 90%;
   height: 110px;
@@ -15,4 +19,14 @@
   font-size : 1.2rem;
   line-height: 1.2rem;
   text-shadow: 1px 2px 2px var(--dark-brown);
+}
+
+.noResult{
+  text-align : center;
+  font-size : 3rem;
+  color : var(--light-grey);
+  background-color : var(--grey);
+  border-radius : 20px;
+  width : 10em;
+  margin : 1rem auto;
 }

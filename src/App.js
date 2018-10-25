@@ -34,6 +34,7 @@ class App extends Component {
         <SearchForm
           handleRadioButton={this.handleRadioButton}
           handleOnChange={this.handleOnChange}
+          include={this.state.include}
         />
         <ResultSection
           countries={countries}

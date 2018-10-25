@@ -8,7 +8,6 @@ const ResultSection = ({ countries, searchInput, include }) => {
     let lengthCountries = include
       ? includes(countries, searchInput).length
       : startsWith(countries, searchInput).length;
-    console.log(lengthCountries);
     return lengthCountries > 0 ? true : false;
   };
   checkLengthCountries();

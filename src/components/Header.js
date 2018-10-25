@@ -1,7 +1,6 @@
 import React from "react";
 import {startsWith, includes} from '../utils/searchFunctions';
 import './header.css';
-//import {startsWith, includes, includesCount} from '../utils/searchFunctions';
 
 function Header({countries, include, searchInput}) {
   return (
